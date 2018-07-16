@@ -1,0 +1,24 @@
+version: '3.1'
+services:
+  redis:
+    image: "redis:alpine"
+    ports:
+     - "6379:6379"
+  mysql:
+    image: "mysql:latest"
+    ports:
+     - "3306:3306"
+    volumes:
+     - "/data/docker/mysql/data:/var/lib/mysql"
+     - "/data/docker/mysql/conf:/etc/mysql/con.d"
+     - "/data/docker/mysql/init:/docker-entrypoint-initdb.d"
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: fangming
+      MYSQL_DATABASE: mix
+      MYSQL_USER: fsmflying
+      MYSQL_PASSWORD: fangming
+
+    
+    
+    
