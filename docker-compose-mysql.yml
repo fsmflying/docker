@@ -5,9 +5,9 @@ services:
     ports:
      - "3306:3306"
     volumes:
-     - "/data/docker/mysql/master01/data:/var/lib/mysql"
-     - "/data/docker/mysql/master01/conf:/etc/mysql/con.d"
-     - "/data/docker/mysql/master01/init:/docker-entrypoint-initdb.d"
+     - "/data/docker/mysql-master01/data:/var/lib/mysql"
+     - "/data/docker/mysql-master01/conf:/etc/mysql/con.d"
+     - "/data/docker/mysql-master01/init:/docker-entrypoint-initdb.d"
     restart: always
     environment:
       MYSQL_ROOT_PASSWORD: fangming
@@ -19,9 +19,9 @@ services:
     ports:
      - "3307:3306"
     volumes:
-     - "/data/docker/mysql/slave01/data:/var/lib/mysql"
-     - "/data/docker/mysql/slave01/conf:/etc/mysql/con.d"
-     - "/data/docker/mysql/slave01/init:/docker-entrypoint-initdb.d"
+     - "/data/docker/mysql-master01-slave01/data:/var/lib/mysql"
+     - "/data/docker/mysql-master01-slave01/conf:/etc/mysql/con.d"
+     - "/data/docker/mysql-master01-slave01/init:/docker-entrypoint-initdb.d"
     restart: always
     environment:
       MYSQL_ROOT_PASSWORD: fangming

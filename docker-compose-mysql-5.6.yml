@@ -1,0 +1,20 @@
+version: '3.1'
+services:
+  mysql:
+    image: "mysql:5.6"
+    ports:
+     - "3307:3306"
+    volumes:
+     - "/data/docker/mysql5.6/data:/var/lib/mysql"
+     - "/data/docker/mysql5.6/conf:/etc/mysql/con.d"
+     - "/data/docker/mysql5.6/init:/docker-entrypoint-initdb.d"
+#    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: fangming
+      MYSQL_DATABASE: mix
+      MYSQL_USER: fsmflying
+      MYSQL_PASSWORD: fangming
+
+    
+    
+    
