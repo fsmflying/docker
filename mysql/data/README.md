@@ -1,1 +1,0 @@
-mysql database store directory

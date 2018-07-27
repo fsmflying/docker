@@ -13,5 +13,10 @@
 >  mkdir /data/docker
 ## 2.复制mysql目录到/data/docker目录下
 >  cp -R mysql /data/docker
+>  mkdir -p /data/docker/mysql/data/
+>  mkdir -p /data/docker/mysql5.6/data/
+>  mkdir -p /data/docker/mysql5.7/data/
+>  mkdir -p /data/docker/mysql-master01/data/
+>  mkdir -p /data/docker/mysql-master01-slave01/data/
 
 
