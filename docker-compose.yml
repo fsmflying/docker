@@ -10,8 +10,9 @@ services:
      - "3306:3306"
     volumes:
      - "/data/docker/mysql/data:/var/lib/mysql"
-     - "/data/docker/mysql/conf:/etc/mysql/con.d"
+     - "/data/docker/mysql/conf:/etc/mysql/conf.d"
      - "/data/docker/mysql/init:/docker-entrypoint-initdb.d"
+     - "/etc/localtime:/etc/localtime"
     restart: always
     environment:
       MYSQL_ROOT_PASSWORD: fangming
