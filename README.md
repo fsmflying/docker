@@ -20,3 +20,11 @@
 >  mkdir -p /data/docker/mysql-master01-slave01/data/
 
 
+# 安装docker-ce
+> sudo yum install -y yum-utils device-mapper-persistent-data lvm2
+> sudo yum-config-manager --add-repo http://mirrors.aliyun.com/docker-ce/linux/centos/docker-ce.repo
+> yum makecache fastsudo 
+> yum -y install docker-ce
+> service docker start
+
+
