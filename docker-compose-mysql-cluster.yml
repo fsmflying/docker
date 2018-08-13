@@ -1,6 +1,6 @@
 version: '3.1'
 services:
-  mysql-cluster-01:
+  mysql-cluster-master01:
     image: "mysql:latest"
     ports:
      - "3307:3306"
@@ -15,7 +15,7 @@ services:
       MYSQL_DATABASE: mix
       MYSQL_USER: fsmflying
       MYSQL_PASSWORD: fangming
-  mysql-cluster-02:
+  mysql-cluster-master02:
     image: "mysql:latest"
     ports:
      - "3308:3306"
@@ -30,7 +30,7 @@ services:
       MYSQL_DATABASE: mix
       MYSQL_USER: fsmflying
       MYSQL_PASSWORD: fangming
-  mysql-cluster-03:
+  mysql-cluster-master03:
     image: "mysql:latest"
     ports:
      - "3309:3306"
@@ -38,6 +38,51 @@ services:
      - "/data/docker/mysql-cluster-3309/data:/var/lib/mysql"
      - "/data/docker/mysql-cluster-3309/conf:/etc/mysql/conf.d"
      - "/data/docker/mysql-cluster-3309/init:/docker-entrypoint-initdb.d"
+     - "/etc/localtime:/etc/localtime"
+#    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: fangming
+      MYSQL_DATABASE: mix
+      MYSQL_USER: fsmflying
+      MYSQL_PASSWORD: fangming
+  mysql-cluster-master01-slave:
+    image: "mysql:latest"
+    ports:
+     - "3317:3306"
+    volumes:
+     - "/data/docker/mysql-cluster-3307-slave/data:/var/lib/mysql"
+     - "/data/docker/mysql-cluster-3307-slave/conf:/etc/mysql/conf.d"
+     - "/data/docker/mysql-cluster-3307-slave/init:/docker-entrypoint-initdb.d"
+     - "/etc/localtime:/etc/localtime"
+#    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: fangming
+      MYSQL_DATABASE: mix
+      MYSQL_USER: fsmflying
+      MYSQL_PASSWORD: fangming
+  mysql-cluster-master02-slave:
+    image: "mysql:latest"
+    ports:
+     - "3318:3306"
+    volumes:
+     - "/data/docker/mysql-cluster-3308-slave/data:/var/lib/mysql"
+     - "/data/docker/mysql-cluster-3308-slave/conf:/etc/mysql/conf.d"
+     - "/data/docker/mysql-cluster-3308-slave/init:/docker-entrypoint-initdb.d"
+     - "/etc/localtime:/etc/localtime"
+#    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: fangming
+      MYSQL_DATABASE: mix
+      MYSQL_USER: fsmflying
+      MYSQL_PASSWORD: fangming
+  mysql-cluster-master03-slave:
+    image: "mysql:latest"
+    ports:
+     - "3319:3306"
+    volumes:
+     - "/data/docker/mysql-cluster-3309-slave/data:/var/lib/mysql"
+     - "/data/docker/mysql-cluster-3309-slave/conf:/etc/mysql/conf.d"
+     - "/data/docker/mysql-cluster-3309-slave/init:/docker-entrypoint-initdb.d"
      - "/etc/localtime:/etc/localtime"
 #    restart: always
     environment:
