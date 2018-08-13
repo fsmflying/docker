@@ -114,6 +114,18 @@ systemctl enable firewalld
 或
 chkconfig firewalld on
 ```
+> 5. 打开端口
+```
+firewall-cmd --zone=public --add-port=80/tcp --permanent
+firewall-cmd --zone=public --add-port=4400-4600/udp --permanent
+```
+> 6. 重启防火墙命令
+```
+firewall-cmd --reload  
+或者   
+service firewalld restart
+```
+
  
    
  
