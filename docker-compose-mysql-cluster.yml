@@ -9,7 +9,7 @@ services:
      - "/data/docker/mysql-cluster-3307/conf:/etc/mysql/conf.d"
      - "/data/docker/mysql-cluster-3307/init:/docker-entrypoint-initdb.d"
      - "/etc/localtime:/etc/localtime"
-    restart: always
+#    restart: always
     environment:
       MYSQL_ROOT_PASSWORD: fangming
       MYSQL_DATABASE: mix
@@ -24,7 +24,7 @@ services:
      - "/data/docker/mysql-cluster-3308/conf:/etc/mysql/conf.d"
      - "/data/docker/mysql-cluster-3308/init:/docker-entrypoint-initdb.d"
      - "/etc/localtime:/etc/localtime"
-    restart: always
+#    restart: always
     environment:
       MYSQL_ROOT_PASSWORD: fangming
       MYSQL_DATABASE: mix
@@ -39,7 +39,7 @@ services:
      - "/data/docker/mysql-cluster-3309/conf:/etc/mysql/conf.d"
      - "/data/docker/mysql-cluster-3309/init:/docker-entrypoint-initdb.d"
      - "/etc/localtime:/etc/localtime"
-    restart: always
+#    restart: always
     environment:
       MYSQL_ROOT_PASSWORD: fangming
       MYSQL_DATABASE: mix
