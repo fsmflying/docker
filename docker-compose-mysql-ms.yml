@@ -1,30 +1,47 @@
 version: '3.1'
 services:
-  mysql-master:
+  mysql-master01:
     image: "mysql:latest"
     ports:
-     - "3306:3306"
+     - "3304:3306"
     volumes:
      - "/data/docker/mysql-master01/data:/var/lib/mysql"
      - "/data/docker/mysql-master01/conf:/etc/mysql/conf.d"
      - "/data/docker/mysql-master01/init:/docker-entrypoint-initdb.d"
      - "/etc/localtime:/etc/localtime"
-    restart: always
+#    restart: always
     environment:
       MYSQL_ROOT_PASSWORD: fangming
       MYSQL_DATABASE: mix
       MYSQL_USER: fsmflying
       MYSQL_PASSWORD: fangming
-  mysql-slave:
+  mysql-master01-slave01:
     image: "mysql:latest"
     ports:
-     - "3307:3306"
+     - "3305:3306"
     volumes:
      - "/data/docker/mysql-master01-slave01/data:/var/lib/mysql"
      - "/data/docker/mysql-master01-slave01/conf:/etc/mysql/conf.d"
      - "/data/docker/mysql-master01-slave01/init:/docker-entrypoint-initdb.d"
      - "/etc/localtime:/etc/localtime"
-    restart: always
+#    restart: always
+    depends_on: mysql-master01
+    environment:
+      MYSQL_ROOT_PASSWORD: fangming
+      MYSQL_DATABASE: mix
+      MYSQL_USER: fsmflying
+      MYSQL_PASSWORD: fangming
+  mysql-master01-slave02:
+    image: "mysql:latest"
+    ports:
+     - "3305:3306"
+    volumes:
+     - "/data/docker/mysql-master01-slave02/data:/var/lib/mysql"
+     - "/data/docker/mysql-master01-slave02/conf:/etc/mysql/conf.d"
+     - "/data/docker/mysql-master01-slave02/init:/docker-entrypoint-initdb.d"
+     - "/etc/localtime:/etc/localtime"
+#    restart: always
+    depends_on: mysql-master01
     environment:
       MYSQL_ROOT_PASSWORD: fangming
       MYSQL_DATABASE: mix
