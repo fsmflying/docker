@@ -89,7 +89,31 @@ FLUSH PRIVILEGES;
 ```
 start slave;
 ```
-<br> 注意：要保证端口已经开放
+#### 5.注意：要保证端口已经开放，或直接关闭防火墙
+> 1. 停止防火墙
+```
+systemctl stop firewalld
+或
+service firewalld stop
+```
+> 2. 打开防火墙
+```
+systemctl start firewalld
+或
+service firewalld start
+```
+> 3. 禁用防火强
+```
+systemctl disable firewalld
+或
+chkconfig firewalld off
+```
+> 4. 启用防火强
+```
+systemctl enable firewalld
+或
+chkconfig firewalld on
+```
  
    
  
