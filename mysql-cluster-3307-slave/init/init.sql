@@ -6,9 +6,9 @@ ALTER USER 'root'@'%' IDENTIFIED WITH mysql_native_password BY 'fangming';
 FLUSH PRIVILEGES;
 
 
-CREATE DATABASE sequence;
+#CREATE DATABASE sequence;
 
-USE sequence;
+USE mix;
 #
 CREATE TABLE MYCAT_SEQUENCE (
   name          VARCHAR(50) NOT NULL,

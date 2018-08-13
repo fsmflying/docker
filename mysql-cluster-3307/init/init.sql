@@ -6,9 +6,9 @@ ALTER USER 'root'@'%' IDENTIFIED WITH mysql_native_password BY 'fangming';
 FLUSH PRIVILEGES;
 
 
-CREATE DATABASE sequence;
+#CREATE DATABASE sequence;
 
-USE sequence;
+USE mix;
 #
 CREATE TABLE MYCAT_SEQUENCE (
   name          VARCHAR(50) NOT NULL,
@@ -18,6 +18,7 @@ CREATE TABLE MYCAT_SEQUENCE (
   PRIMARY KEY (name)
 )
   ENGINE = InnoDB;
+
 #插入一条 sequence
 INSERT INTO MYCAT_SEQUENCE (name, current_value, increment) VALUES ('GLOBAL', 100000, 100);
 
