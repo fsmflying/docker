@@ -1,0 +1,52 @@
+version: '3.1'
+services:
+  mysql-cluster-01:
+    image: "mysql:latest"
+    ports:
+     - "3307:3306"
+    volumes:
+     - "/data/docker/mysql-cluster-3307/data:/var/lib/mysql"
+     - "/data/docker/mysql-cluster-3307/conf:/etc/mysql/conf.d"
+     - "/data/docker/mysql-cluster-3307/init:/docker-entrypoint-initdb.d"
+     - "/etc/localtime:/etc/localtime"
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: fangming
+      MYSQL_DATABASE: mix
+      MYSQL_USER: fsmflying
+      MYSQL_PASSWORD: fangming
+  mysql-cluster-02:
+    image: "mysql:latest"
+    ports:
+     - "3308:3306"
+    volumes:
+     - "/data/docker/mysql-cluster-3308/data:/var/lib/mysql"
+     - "/data/docker/mysql-cluster-3308/conf:/etc/mysql/conf.d"
+     - "/data/docker/mysql-cluster-3308/init:/docker-entrypoint-initdb.d"
+     - "/etc/localtime:/etc/localtime"
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: fangming
+      MYSQL_DATABASE: mix
+      MYSQL_USER: fsmflying
+      MYSQL_PASSWORD: fangming
+  mysql-cluster-03:
+    image: "mysql:latest"
+    ports:
+     - "3309:3306"
+    volumes:
+     - "/data/docker/mysql-cluster-3309/data:/var/lib/mysql"
+     - "/data/docker/mysql-cluster-3309/conf:/etc/mysql/conf.d"
+     - "/data/docker/mysql-cluster-3309/init:/docker-entrypoint-initdb.d"
+     - "/etc/localtime:/etc/localtime"
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: fangming
+      MYSQL_DATABASE: mix
+      MYSQL_USER: fsmflying
+      MYSQL_PASSWORD: fangming
+
+
+    
+    
+    

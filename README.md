@@ -12,19 +12,19 @@
 ## 1.创建数据目录
 >  mkdir /data/docker
 ## 2.复制mysql目录到/data/docker目录下
->  cp -R mysql /data/docker
->  mkdir -p /data/docker/mysql/data/
->  mkdir -p /data/docker/mysql5.6/data/
->  mkdir -p /data/docker/mysql5.7/data/
->  mkdir -p /data/docker/mysql-master01/data/
->  mkdir -p /data/docker/mysql-master01-slave01/data/
+>  * cp -R mysql /data/docker
+>  * mkdir -p /data/docker/mysql/data/
+>  * mkdir -p /data/docker/mysql5.6/data/
+>  * mkdir -p /data/docker/mysql5.7/data/
+>  * mkdir -p /data/docker/mysql-master01/data/
+>  * mkdir -p /data/docker/mysql-master01-slave01/data/
 
 
 # 安装docker-ce
-> sudo yum install -y yum-utils device-mapper-persistent-data lvm2
-> sudo yum-config-manager --add-repo http://mirrors.aliyun.com/docker-ce/linux/centos/docker-ce.repo
-> yum makecache fastsudo 
-> yum -y install docker-ce
-> service docker start
+> * sudo yum install -y yum-utils device-mapper-persistent-data lvm2
+> * sudo yum-config-manager --add-repo http://mirrors.aliyun.com/docker-ce/linux/centos/docker-ce.repo
+> * yum makecache fast
+> * yum -y install docker-ce
+> * service docker start
 
 
