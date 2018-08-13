@@ -55,6 +55,7 @@ services:
      - "/data/docker/mysql-cluster-3307-slave/init:/docker-entrypoint-initdb.d"
      - "/etc/localtime:/etc/localtime"
 #    restart: always
+    depends_on: mysql-cluster-master01
     environment:
       MYSQL_ROOT_PASSWORD: fangming
       MYSQL_DATABASE: mix
@@ -70,6 +71,7 @@ services:
      - "/data/docker/mysql-cluster-3308-slave/init:/docker-entrypoint-initdb.d"
      - "/etc/localtime:/etc/localtime"
 #    restart: always
+    depends_on: mysql-cluster-master02
     environment:
       MYSQL_ROOT_PASSWORD: fangming
       MYSQL_DATABASE: mix
@@ -85,6 +87,7 @@ services:
      - "/data/docker/mysql-cluster-3309-slave/init:/docker-entrypoint-initdb.d"
      - "/etc/localtime:/etc/localtime"
 #    restart: always
+    depends_on: mysql-cluster-master03
     environment:
       MYSQL_ROOT_PASSWORD: fangming
       MYSQL_DATABASE: mix
