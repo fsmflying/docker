@@ -32,6 +32,7 @@ services:
      - "25672:25672"
     volumes:
      - "/etc/localtime:/etc/localtime"
+     - "/data/docker/rabbitmq:/var/lib/rabbitmq"
     restart: always
     environment:
       RABBITMQ_DEFAULT_USER: rabbitmq
