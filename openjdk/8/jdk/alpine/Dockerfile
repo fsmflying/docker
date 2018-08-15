@@ -36,7 +36,7 @@ ENV JAVA_ALPINE_VERSION 8.171.11-r0
 
 RUN set -x \
     && apk add --no-cache tzdata \
-    && rm -rf /etc/localtime
+    && rm -rf /etc/localtime \
 	&& apk add --no-cache \
 		openjdk8="$JAVA_ALPINE_VERSION" \
 	&& [ "$JAVA_HOME" = "$(docker-java-home)" ]
