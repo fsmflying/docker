@@ -37,6 +37,11 @@ services:
     environment:
       RABBITMQ_DEFAULT_USER: rabbitmq
       RABBITMQ_DEFAULT_PASS: fangming
+  eureka-default:
+    image: "fsmflying/eureka:v1"
+    ports:
+     - "8761:8761"
+    restart: always
 
     
     
