@@ -1,0 +1,19 @@
+version: '3.1'
+services:
+  mysql:
+    image: "mysql:5.7"
+    ports:
+     - "3310:3306"
+    volumes:
+     - "/data/docker/mysql-xiaoyaoji/data:/var/lib/mysql"
+     - "/data/docker/mysql-xiaoyaoji/conf:/etc/mysql/conf.d"
+     - "/data/docker/mysql-xiaoyaoji/init:/docker-entrypoint-initdb.d"
+     - "/etc/localtime:/etc/localtime"
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: fangming
+      MYSQL_DATABASE: xiaoyaoji
+      MYSQL_USER: fsmflying
+      MYSQL_PASSWORD: fangming
+    
+    
